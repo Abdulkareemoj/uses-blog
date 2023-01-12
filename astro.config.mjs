@@ -1,11 +1,12 @@
-
 import image from '@astrojs/image';
+import react from '@astrojs/react';
 import sitemap from '@astrojs/sitemap';
 import { defineConfig } from 'astro/config';
+// https://astro.build/config
+import tailwind from "@astrojs/tailwind";
 
-import react from '@astrojs/react';
 // https://astro.build/config
 export default defineConfig({
-	site: 'https://example.com',
-	integrations: [sitemap(), image(), react() ],
+  site: 'https://example.com',
+  integrations: [sitemap(), image(), react(), tailwind()]
 });
