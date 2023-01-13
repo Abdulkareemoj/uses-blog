@@ -3,4 +3,4 @@
 
 export const SITE_TITLE = 'What i Use';
 export const SITE_DESCRIPTION = 'A list of tools i use and some workflow for coding';
-export const HOMEPAGE_URL = 'https://what-i-use.vercel.app';
+export const HOMEPAGE_URL = 'https://what-i-use.vercel.app'; //https://uses.wiztek.com

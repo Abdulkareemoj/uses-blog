@@ -7,6 +7,6 @@ import tailwind from "@astrojs/tailwind";
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://example.com',
+site: 'https://what-i-use.vercel.app', //https://uses.wiztek.com
   integrations: [sitemap(), image(), react(), tailwind()]
 });
