@@ -7,13 +7,15 @@ import HeaderLink from './HeaderLink.astro';
 	<div class="mx-auto max-w-3xl">
 		<nav class="flex items-center gap-3 text-base">
 	<h2 class="font-semibold tracking-tighter p-2 text-lg">
-		{SITE_TITLE}
+		WiZtEk
 	</h2>
-	
-		<HeaderLink href="/">Home</HeaderLink>
+	<div class="items-center gap-6 hidden md:flex">
+		<HeaderLink href="{HOMEPAGE_URL}">Home</HeaderLink>
 		<HeaderLink href="https://twitter.com/abdulkareemoj" target="_blank">Twitter</HeaderLink>
 		<HeaderLink href="https://github.com/abdulkareemoj" target="_blank">GitHub</HeaderLink>
-	</nav>
+	</div>
+<div class="flex-1"></div>
+</nav>
 </div>
 </header>
 <style>
