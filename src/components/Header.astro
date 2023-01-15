@@ -1,6 +1,7 @@
 ---
 import { SITE_TITLE } from '../config';
 import HeaderLink from './HeaderLink.astro';
+import Toggle from './Toggle.js';
 ---
 
 <header class="fixed w-full pq2 z-20 backdrop-blur-md">
@@ -15,14 +16,15 @@ import HeaderLink from './HeaderLink.astro';
 		<HeaderLink href="https://github.com/abdulkareemoj" target="_blank">GitHub</HeaderLink>
 	</div>
 <div class="flex-1"></div>
+<Toggle />
 </nav>
 </div>
 </header>
-<style>
+<!-- <style>
 	header {
 		margin: 0em 0 2em;
 	}
 	h2 {
 		margin: 0.5em 0;
 	}
-</style>
+</style> -->
