@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-const theme = ['light', 'dark']
+const themes = ['light', 'dark']
 
 export default function Toggle(){
 const [mounted, setMounted] = useState(false);
@@ -32,6 +32,26 @@ const [theme, setTheme] = useState(() => {
   useEffect(() => {
     setMounted(true);
   }, [])
-  return mounted ?(<div className="inline-flex">Button</div>):(<div />)
-
+ 
+  return mounted ? (
+    <div className="inline-flex items-center p-[1px] rounded-3xl bg-orange-300 dark:bg-zinc-600">
+      {themes.map(t => {
+        const checked = theme === theme
+        return (
+          <button
+            key={theme}
+            className={`${
+              checked ? 'bg-white text-black' : ''
+            } cursor-pointer rounded-3xl p-2`}
+            onClick={toggleTheme}
+            aria-label="Toggle theme"
+          >
+            {theme === 'light' ? 'sun' : 'moon'}
+          </button>
+        )
+      })}
+    </div>
+  ) : (
+    <div />
+  )
 }
