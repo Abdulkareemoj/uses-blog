@@ -1,4 +1,4 @@
-import image from '@astrojs/image';
+// import image from '@astrojs/image';
 import react from '@astrojs/react';
 import sitemap from '@astrojs/sitemap';
 import { defineConfig } from 'astro/config';
