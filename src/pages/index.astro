@@ -6,6 +6,11 @@ import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
 import Masthead from '../components/Masthead.astro';
 import { SITE_DESCRIPTION,SITE_TITLE } from '../config';
+
+const posts = (await Astro.glob('./posts/*.md')).sort((a: any, b: any) => {
+  new Date(b.formatter.pubDate).valueOf()-new Date(a.formatter.pubDate).valueOf()
+});
+ 
 ---
 
 <!DOCTYPE html>
@@ -30,6 +35,14 @@ Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sint labore obcaecati 
 				<a class="inline-flex items-center gap-1 indent-1 text-orange-500" href="http://">Learn More</a>	
 </p>
 				</section>
+				<section>
+					<ul>{
+						posts.map(post =>
+						<li> <a>{post.frontmatter.title}<a/>
+							<li/>
+						}
+						<ul/>
+					<section/>
 			</Content>
 		</main>
 		<Footer />
