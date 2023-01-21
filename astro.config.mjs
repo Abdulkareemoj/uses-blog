@@ -1,9 +1,9 @@
 // import image from '@astrojs/image';
 import react from '@astrojs/react';
 import sitemap from '@astrojs/sitemap';
+import tailwind from '@astrojs/tailwind';
 import { defineConfig } from 'astro/config';
 // https://astro.build/config
-import tailwind from "@astrojs/tailwind";
 
 // https://astro.build/config
 import cloudflare from "@astrojs/cloudflare";
@@ -12,7 +12,7 @@ import cloudflare from "@astrojs/cloudflare";
 export default defineConfig({
   site: 'https://what-i-use.vercel.app',
   //https://uses.wiztek.com
-  integrations: [sitemap(), image(), react(), tailwind()],
+  integrations: [sitemap(),  react(), tailwind()],
   output: "server",
   adapter: cloudflare()
 });
