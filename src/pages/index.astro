@@ -33,23 +33,36 @@ const posts = (await Astro.glob('./posts/*.md')).sort(
 				<section>
 					<p class="mb-8 indent-4">
 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sint labore obcaecati nihil doloremque dicta quidem praesentium consectetur quos tenetur facilis inventore, distinctio optio dolor laborum at nulla temporibus vero dolores accusamus molestiae perspiciatis beatae ipsum provident. Culpa temporibus perferendis earum voluptatibus? Fugit nobis recusandae ad quisquam tenetur deserunt distinctio perferendis.
-				<a class="inline-flex items-center gap-1 indent-1 text-orange-500" href="http://">Learn More</a>	
+<a
+class="inline-flex items-center gap-1 indent-1 text-orange-500"
+
+>Learn more about me 
+</a>
 </p>
-				</section>
-				<section>
-					<ul class="grid grid-cols-1 md:grid-cols-2 gap-4">{
-						posts.map(post =>
-						<li class="text-center mb-4"> <a href={post.url}>
-							<div class="mt-3 text-xl">{post.frontmatter.title}
-								<div/>
-						<div class="opacity-70">		{post.frontmatter.description}	
-							</div><a/>
-						<li/>
-						
-						<ul/>
-					<section/>
-			</Content>
-		</main>
-		<Footer />
-	</Body>
+</section>
+<section>
+<ul class="grid grid-cols-1 md:grid-cols-2 gap-4">
+{
+posts.map(post => (
+  <li class="text-center mb-4">
+	<a href={post.url}>
+	  
+	  <div class="mt-3 text-xl font-bold">
+		{post.frontmatter.title}
+	  </div>
+	  {post.frontmatter.description && (
+		<div class="opacity-70">
+		  {post.frontmatter.description}
+		</div>
+	  )}
+	</a>
+  </li>
+))
+}
+</ul>
+</section>
+</Content>
+</main>
+<Footer />
+</Body>
 </html>
