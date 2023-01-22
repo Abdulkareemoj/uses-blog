@@ -7,10 +7,11 @@ import Header from '../components/Header.astro';
 import Masthead from '../components/Masthead.astro';
 import { SITE_DESCRIPTION,SITE_TITLE } from '../config';
 
-const posts = (await Astro.glob('./posts/*.md')).sort((a: any, b: any) => {
-  return new Date(b.formatter.pubDate).valueOf() - new Date(a.formatter.pubDate).valueOf();
-});
- 
+const posts = (await Astro.glob('./posts/*.md')).sort(
+  (a: any, b: any) =>
+    new Date(b.frontmatter.createdAt).valueOf() -
+    new Date(a.frontmatter.createdAt).valueOf()
+)
 ---
 
 <!DOCTYPE html>
