@@ -2,22 +2,30 @@
 import { SITE_TITLE } from '../config';
 import HeaderLink from './HeaderLink.astro';
 import Toggle from './Toggle.js';
----
+// import DropdownMenu from './DropdownMenu'
 
-<header class="fixed w-full pq2 z-20 backdrop-blur-md">
+const allPosts = await Astro.glob('../pages/posts/*.md')
+const allTags = new Set<string>()
+allPosts.map(post => {
+  post.frontmatter.tags &&
+    post.frontmatter.tags.map((tag: string) => allTags.add(tag))
+})
+---
+<header class="fixed w-full p-2 z-20 backdrop-blur-md">
 	<div class="mx-auto max-w-3xl">
-		<nav class="flex items-center gap-3 text-base">
-	<h2 class="font-semibold tracking-tighter p-2 text-lg">
-		WiZtEk
+	  <nav class="flex items-center gap-3 text-base">
+		<a href="/" class="group">
+		  <h2 class="font-semibold tracking-tighter p-2 font-mplus text-lg">WiZtEk
 	</h2>
 	<div class="items-center gap-6 hidden md:flex">
-		<HeaderLink href="{HOMEPAGE_URL}">Home</HeaderLink>
+		<HeaderLink href="{SITE_TITLE}">Home</HeaderLink>
 		<HeaderLink href="https://twitter.com/abdulkareemoj" target="_blank">Twitter</HeaderLink>
 		<HeaderLink href="https://github.com/abdulkareemoj" target="_blank">GitHub</HeaderLink>
 	</div>
 <div class="flex-1"></div>
-<Toggle />
-</nav>
+<Toggle client:visible />
+      <!-- <DropdownMenu client:visible tags={Array.from(allTags)} /> -->
+    </nav>
 </div>
 </header>
 <!-- <style>
