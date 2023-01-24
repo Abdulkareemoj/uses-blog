@@ -1,4 +1,4 @@
-// import image from '@astrojs/image';
+import image from '@astrojs/image';
 import react from '@astrojs/react';
 import sitemap from '@astrojs/sitemap';
 import tailwind from '@astrojs/tailwind';
@@ -12,7 +12,7 @@ import cloudflare from "@astrojs/cloudflare";
 export default defineConfig({
   site: 'https://what-i-use.vercel.app',
   //https://uses.wiztek.com
-  integrations: [sitemap(),  react(), tailwind()],
+  integrations: [sitemap(), image(), react(), tailwind()],
   output: "server",
   adapter: cloudflare()
 });
