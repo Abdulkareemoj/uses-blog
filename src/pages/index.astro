@@ -14,23 +14,19 @@ const posts = (await Astro.glob('./posts/*.md')).sort(
 )
 ---
 
-<!DOCTYPE html>
-<!-- <html lang="en"> -->
-<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-	</head>
 
 	
-	<Body />
-		
-		<Header title={SITE_TITLE} />
-		<main class="pt-[56px]">
-		<Masthead />
-			<h1 class="text-center">
-				What i use
-			</h1>
-			<Content>
-				<section>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+  </head>
+  <Body>
+    <Header title={SITE_TITLE} />
+    <main class="pt-[56px]">
+      <Masthead />
+      <Content>
+        <section>
 					<p class="mb-8 indent-4">
 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sint labore obcaecati nihil doloremque dicta quidem praesentium consectetur quos tenetur facilis inventore, distinctio optio dolor laborum at nulla temporibus vero dolores accusamus molestiae perspiciatis beatae ipsum provident. Culpa temporibus perferendis earum voluptatibus? Fugit nobis recusandae ad quisquam tenetur deserunt distinctio perferendis.
 <a
