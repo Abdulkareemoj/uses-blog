@@ -1,19 +1,33 @@
-<section class="relative mb-6 h-80 flex jusify-center items-center">
-   
-   <div class="absolute w-full h-hull overflow-hidden">
-  <!-- add soemthing here for the masthead background cue 44:59 in the vid -->
-   </div> 
-   <div class="z-10 tect-center px-8 drop-shadow-lg shadow-black">
-<div class="uppercase text-sm mb-4">
-    welcome to
+<!-- ---
+const isProd = import.meta.env.PROD
+const baseAssetUrl = isProd
+  ? ''
+  : ''
+--- -->
 
-</div>
-<div class="text-4xl  font-medium">
-    a list of tools i <span class="text-orange-500">use</span> 
-
-</div>
-   </div>
-
-    Masthead
-
-    </section>
+<section class="relative mb-6 h-80 flex justify-center items-center">
+  <div class="absolute w-full h-full overflow-hidden">
+    <video
+      class="absolute inset-0 min-w-full min-h-full object-cover opacity-30"
+      poster="/masthead-poster.jpg"
+      autoplay="autoplay"
+      muted="muted"
+      loop="loop"
+      playsinline
+      ><source
+        src={baseAssetUrl + '/masthead.webm'}
+        type="video/webm; codecs=vp9"
+      />
+      <source
+        src={baseAssetUrl + '/masthead.m4v'}
+        type="video/mp4; codecs=hvc1"
+      />
+    </video>
+  </div>
+  <div class="z-10 text-center px-8 drop-shadow-lg shadow-black">
+    <div class="uppercase text-sm mb-4">Welcome to</div>
+    <div class="text-4xl font-mplus font-medium">
+      A curated list of the tech I <span class="text-orange-500">use</span>
+    </div>
+  </div>
+</section>
