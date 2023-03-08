@@ -9,7 +9,7 @@ import { defineConfig } from 'astro/config';
 // https://astro.build/config
 export default defineConfig({
   site: 'https://abdulkareemoj.github.io',
-  base: '/my-repo',
+  base: '/uses-blog',
   //https://uses.wiztek.com
   integrations: [sitemap(), image(), react(), tailwind()],
   // output: "server",
